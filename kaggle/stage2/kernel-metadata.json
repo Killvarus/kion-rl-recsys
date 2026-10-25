@@ -1,4 +1,0 @@
-{"id": "killvarus/kion-rl-stage2", "title": "kion-rl-stage2", "code_file": "stage2.py", "language": "python",
- "kernel_type": "script", "is_private": true, "enable_gpu": true, "enable_internet": false,
- "machine_shape": "NvidiaTeslaT4",
- "dataset_sources": ["killvarus/kion-dataset"], "kernel_sources": ["killvarus/kion-rl-stage1"], "competition_sources": []}

@@ -1,0 +1,80 @@
+[{"stream_name":"stdout","time":35.671912341,"data":"16:22:27 device cuda stage 1 smoke 0\n"}
+,{"stream_name":"stdout","time":40.181908152,"data":"16:22:32 raw rows 5476251\n"}
+,{"stream_name":"stdout","time":92.070100534,"data":"16:23:24 val eligible users 90479 -\u003e sampled 20000\n"}
+,{"stream_name":"stdout","time":92.257288298,"data":"16:23:24 test eligible users 95559 -\u003e sampled 20000\n"}
+,{"stream_name":"stdout","time":92.788144667,"data":"16:23:24 V 8021 train seqs 532451\n"}
+,{"stream_name":"stderr","time":94.34679455,"data":"[transformers] `loss_type=None` was set in the config but it is unrecognized. Using the default loss: `ForCausalLMLoss`.\n"}
+,{"stream_name":"stdout","time":223.370039653,"data":"16:25:35 SFT {'epoch': 0, 'loss': 6.586597824067305, 'val_NDCG@10': 0.13410115293972272, 'val_Recall@10': 0.19120176719910095} 130s\n"}
+,{"stream_name":"stdout","time":353.765949684,"data":"16:27:45 SFT {'epoch': 1, 'loss': 6.322610394749793, 'val_NDCG@10': 0.1380690996962043, 'val_Recall@10': 0.19617710858377435} 130s\n"}
+,{"stream_name":"stdout","time":483.970467341,"data":"16:29:56 SFT {'epoch': 2, 'loss': 6.25983475731511, 'val_NDCG@10': 0.13922515103290584, 'val_Recall@10': 0.19800522559346104} 130s\n"}
+,{"stream_name":"stdout","time":614.171257414,"data":"16:32:06 SFT {'epoch': 3, 'loss': 6.226976618716661, 'val_NDCG@10': 0.1411155730809007, 'val_Recall@10': 0.19951286576284832} 130s\n"}
+,{"stream_name":"stdout","time":744.194831305,"data":"16:34:16 SFT {'epoch': 4, 'loss': 6.2036922199802484, 'val_NDCG@10': 0.14231782980389704, 'val_Recall@10': 0.2003813036093429} 130s\n"}
+,{"stream_name":"stdout","time":874.215411713,"data":"16:36:26 SFT {'epoch': 5, 'loss': 6.187668635997065, 'val_NDCG@10': 0.1404982182780862, 'val_Recall@10': 0.19964673057903037} 130s\n"}
+,{"stream_name":"stdout","time":1004.296272736,"data":"16:38:36 SFT {'epoch': 6, 'loss': 6.174430127101778, 'val_NDCG@10': 0.14218442400339934, 'val_Recall@10': 0.20190210137717163} 130s\n"}
+,{"stream_name":"stdout","time":1119.451220424,"data":"16:40:31 RM epoch 0 loss 3.1921959064550363\n"}
+,{"stream_name":"stdout","time":1234.115900112,"data":"16:42:26 RM epoch 1 loss 3.1262802204580065\n"}
+,{"stream_name":"stdout","time":1348.715530833,"data":"16:44:20 RM epoch 2 loss 3.1110846213770214\n"}
+,{"stream_name":"stdout","time":1354.464289067,"data":"0:\tlearn: 0.3913646\ttest: 0.3934977\tbest: 0.3934977 (0)\ttotal: 60.4ms\tremaining: 1m 30s\n"}
+,{"stream_name":"stdout","time":1356.115588782,"data":"300:\tlearn: 0.3446629\ttest: 0.3513033\tbest: 0.3512905 (298)\ttotal: 1.69s\tremaining: 6.72s\n"}
+,{"stream_name":"stdout","time":1356.905219674,"data":"Stopped by overfitting detector  (100 iterations wait)\n"}
+,{"stream_name":"stdout","time":1356.905312594,"data":"\n"}
+,{"stream_name":"stdout","time":1356.905353513,"data":"bestTest = 0.3512271958\n"}
+,{"stream_name":"stdout","time":1356.90542237,"data":"bestIteration = 346\n"}
+,{"stream_name":"stdout","time":1356.905524015,"data":"\n"}
+,{"stream_name":"stdout","time":1356.905593103,"data":"Shrink model to first 347 iterations.\n"}
+,{"stream_name":"stderr","time":1378.94459447,"data":"/kaggle/src/script.py:401: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.\n"}
+,{"stream_name":"stderr","time":1378.944639195,"data":"  if mk.sum() \u003e= 3 and np.std(Y[mk]) \u003e 0 and np.std(pred[mk]) \u003e 0: vals.append(spearmanr(pred[mk], Y[mk])[0])\n"}
+,{"stream_name":"stdout","time":1426.0293204,"data":"16:45:38 RM eval {\n"}
+,{"stream_name":"stdout","time":1426.029365585,"data":" \"global_mean\": {\n"}
+,{"stream_name":"stdout","time":1426.029375201,"data":"  \"MAE\": 0.3691944479942322,\n"}
+,{"stream_name":"stdout","time":1426.029379146,"data":"  \"RMSE\": 0.3979699909687042,\n"}
+,{"stream_name":"stdout","time":1426.029394849,"data":"  \"AUC_complete\": 0.5,\n"}
+,{"stream_name":"stdout","time":1426.029397469,"data":"  \"within_user_spearman\": 0.0\n"}
+,{"stream_name":"stdout","time":1426.029399904,"data":" },\n"}
+,{"stream_name":"stdout","time":1426.029402267,"data":" \"item_mean\": {\n"}
+,{"stream_name":"stdout","time":1426.029404724,"data":"  \"MAE\": 0.33138105273246765,\n"}
+,{"stream_name":"stdout","time":1426.029407097,"data":"  \"RMSE\": 0.37666258215904236,\n"}
+,{"stream_name":"stdout","time":1426.029409572,"data":"  \"AUC_complete\": 0.6688339655949614,\n"}
+,{"stream_name":"stdout","time":1426.0294121,"data":"  \"within_user_spearman\": 0.24430393635834383\n"}
+,{"stream_name":"stdout","time":1426.029414535,"data":" },\n"}
+,{"stream_name":"stdout","time":1426.029416807,"data":" \"user_mean\": {\n"}
+,{"stream_name":"stdout","time":1426.029419147,"data":"  \"MAE\": 0.3347284495830536,\n"}
+,{"stream_name":"stdout","time":1426.029421612,"data":"  \"RMSE\": 0.39872345328330994,\n"}
+,{"stream_name":"stdout","time":1426.029423975,"data":"  \"AUC_complete\": 0.6614538123179219,\n"}
+,{"stream_name":"stdout","time":1426.029426333,"data":"  \"within_user_spearman\": NaN\n"}
+,{"stream_name":"stdout","time":1426.02942878,"data":" },\n"}
+,{"stream_name":"stdout","time":1426.029431018,"data":" \"RM-A (neural)\": {\n"}
+,{"stream_name":"stdout","time":1426.029433358,"data":"  \"MAE\": 0.31630343198776245,\n"}
+,{"stream_name":"stdout","time":1426.029435801,"data":"  \"RMSE\": 0.3674370348453522,\n"}
+,{"stream_name":"stdout","time":1426.029438362,"data":"  \"AUC_complete\": 0.7010678020210445,\n"}
+,{"stream_name":"stdout","time":1426.029440727,"data":"  \"within_user_spearman\": 0.2700542151008329\n"}
+,{"stream_name":"stdout","time":1426.029443127,"data":" },\n"}
+,{"stream_name":"stdout","time":1426.029445395,"data":" \"RM-B judge (CatBoost)\": {\n"}
+,{"stream_name":"stdout","time":1426.029447781,"data":"  \"MAE\": 0.30407845612925605,\n"}
+,{"stream_name":"stdout","time":1426.029450134,"data":"  \"RMSE\": 0.35192604746526635,\n"}
+,{"stream_name":"stdout","time":1426.029452511,"data":"  \"AUC_complete\": 0.754258593022218,\n"}
+,{"stream_name":"stdout","time":1426.029454881,"data":"  \"within_user_spearman\": 0.2576131514488156\n"}
+,{"stream_name":"stdout","time":1426.029457261,"data":" },\n"}
+,{"stream_name":"stdout","time":1426.029459503,"data":" \"RM-A complete head\": {\n"}
+,{"stream_name":"stdout","time":1426.029461898,"data":"  \"AUC_complete\": 0.7037893128371722\n"}
+,{"stream_name":"stdout","time":1426.029464262,"data":" },\n"}
+,{"stream_name":"stdout","time":1426.029466515,"data":" \"uncond_AUC_watched_vs_popneg\": {\n"}
+,{"stream_name":"stdout","time":1426.029468929,"data":"  \"RM-A uncond head\": 0.7493289231135463,\n"}
+,{"stream_name":"stdout","time":1426.029471343,"data":"  \"RM-A cond wp head\": 0.5668238666460697\n"}
+,{"stream_name":"stdout","time":1426.029473727,"data":" },\n"}
+,{"stream_name":"stdout","time":1426.029475989,"data":" \"ret7_head_val\": {\n"}
+,{"stream_name":"stdout","time":1426.029478315,"data":"  \"AUC\": 0.5792746319584003,\n"}
+,{"stream_name":"stdout","time":1426.029480717,"data":"  \"base_rate\": 0.6855461597442627\n"}
+,{"stream_name":"stdout","time":1426.029483097,"data":" }\n"}
+,{"stream_name":"stdout","time":1426.02948541,"data":"}\n"}
+,{"stream_name":"stdout","time":1468.872763976,"data":"16:46:21 Popularity {'Recall@10': 0.1721, 'NDCG@10': 0.1132, 'MAP@10': 0.075, 'gNDCG@10': 0.0994, 'HitRate@10': 0.2942, 'coverage@10': 0.0034, 'gini@10': 0.9985, 'top1_share': 0.7047, 'jaccard_users': 0.6441, 'series_share': 0.5102, 'kids_share': 0.0, 'mean_len_min': 350.5089, 'mean_log_pop': 10.5353, 'top_genre_share': 0.2452, 'seen_share': 0.0, 'RM_wp': 0.3634, 'RM_time': 0.7346, 'RM_uncond': 0.0933, 'RM_ret': 0.5632, 'RM_complete': 0.2449, 'judge_wp': 0.3764}\n"}
+,{"stream_name":"stdout","time":1468.873299343,"data":"16:46:21 SFT Top-K {'Recall@10': 0.1856, 'NDCG@10': 0.1293, 'MAP@10': 0.0887, 'gNDCG@10': 0.1194, 'HitRate@10': 0.3244, 'coverage@10': 0.2887, 'gini@10': 0.9707, 'top1_share': 0.1652, 'jaccard_users': 0.1223, 'series_share': 0.321, 'kids_share': 0.0004, 'mean_len_min': 315.1845, 'mean_log_pop': 9.537, 'top_genre_share': 0.2712, 'seen_share': 0.0, 'RM_wp': 0.4736, 'RM_time': 0.7699, 'RM_uncond': 0.2474, 'RM_ret': 0.6021, 'RM_complete': 0.3434, 'judge_wp': 0.441}\n"}
+,{"stream_name":"stdout","time":1468.873328822,"data":"16:46:21 SFT Top-K (no seen mask) {'Recall@10': 0.1714, 'NDCG@10': 0.1172, 'MAP@10': 0.08, 'gNDCG@10': 0.1088, 'HitRate@10': 0.299, 'coverage@10': 0.2873, 'gini@10': 0.9711, 'top1_share': 0.1474, 'jaccard_users': 0.1197, 'series_share': 0.3183, 'kids_share': 0.0005, 'mean_len_min': 318.654, 'mean_log_pop': 9.5086, 'top_genre_share': 0.2761, 'seen_share': 0.1597, 'RM_wp': 0.4771, 'RM_time': 0.7727, 'RM_uncond': 0.2594, 'RM_ret': 0.6018, 'RM_complete': 0.3462, 'judge_wp': 0.4411}\n"}
+,{"stream_name":"stdout","time":1468.873335058,"data":"16:46:21 SFT Next-K (autoregressive) {'Recall@10': 0.1743, 'NDCG@10': 0.1235, 'MAP@10': 0.0864, 'gNDCG@10': 0.1124, 'HitRate@10': 0.2974, 'coverage@10': 0.23, 'gini@10': 0.9825, 'top1_share': 0.1652, 'jaccard_users': 0.2275, 'series_share': 0.3657, 'kids_share': 0.0004, 'mean_len_min': 308.9181, 'mean_log_pop': 9.6205, 'top_genre_share': 0.284, 'seen_share': 0.0, 'RM_wp': 0.434, 'RM_time': 0.7542, 'RM_uncond': 0.2011, 'RM_ret': 0.5921, 'RM_complete': 0.3049, 'judge_wp': 0.4245}\n"}
+,{"stream_name":"stderr","time":1476.021409217,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1476.021439896,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1476.275080598,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1476.275104855,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1477.098432632,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1477.840651941,"data":"[NbConvertApp] Writing 517743 bytes to __results__.html\n"}
+]

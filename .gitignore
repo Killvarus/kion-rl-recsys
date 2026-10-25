@@ -1,0 +1,8 @@
+# third-party papers (links are in README)
+*.pdf
+# generated / temporary
+catboost_info/
+__pycache__/
+out*/
+kaggle/stage*/
+kaggle/data/*.zip

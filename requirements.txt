@@ -7,4 +7,3 @@ pandas
 numpy
 matplotlib
 tabulate
-kaggle

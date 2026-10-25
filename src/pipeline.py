@@ -1,9 +1,10 @@
 """KION: GPT-2 next-item recommender -> reward models -> RL fine-tuning -> analysis.
 
-One file, two stages (Kaggle kernels):
+One file, three stages:
   STAGE=1 : data prep, baselines, GPT-2 SFT, neural reward model (RM-A), CatBoost judge (RM-B)
   STAGE=2 : RL fine-tuning (RLOO policy gradient over Plackett-Luce slates + exact KL to SFT),
             re-ranking baseline, multi-step generation analysis
+  STAGE=3 : strong-KL part of the beta sweep and long RL runs
 Env: KION_DIR (dir containing data_original.zip or interactions.csv/items.csv), OUT_DIR, SMOKE (n users).
 """
 import os, glob, json, time, zipfile, copy, math
@@ -13,10 +14,9 @@ from transformers import GPT2Config, GPT2LMHeadModel
 STAGE = os.environ.get('STAGE', globals().get('STAGE', '1'))
 SMOKE = int(os.environ.get('SMOKE', '0'))
 DEV = 'cuda' if torch.cuda.is_available() else 'cpu'
-ON_KAGGLE = os.path.exists('/kaggle')
-IN = os.environ.get('KION_DIR', '/kaggle/input')
-OUT = os.environ.get('OUT_DIR', '/kaggle/working' if ON_KAGGLE else './out')
-PREV = os.environ.get('PREV_DIR', '/kaggle/input')  # where stage-1 outputs are mounted for stage 2
+IN = os.environ.get('KION_DIR', './data')
+OUT = os.environ.get('OUT_DIR', './out')
+PREV = os.environ.get('PREV_DIR', './results/stage1')  # stage-1 outputs used by stages 2 and 3
 os.makedirs(OUT, exist_ok=True)
 
 T_VAL, T_TEST = pd.Timestamp('2021-08-09'), pd.Timestamp('2021-08-16')

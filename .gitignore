@@ -4,5 +4,3 @@
 catboost_info/
 __pycache__/
 out*/
-kaggle/stage*/
-kaggle/data/*.zip

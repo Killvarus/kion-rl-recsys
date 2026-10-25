@@ -349,25 +349,12 @@ python src/make_report.py results
 
 Потребление RAM — до 8 ГБ. На CPU полный прогон занимает порядка 10–15 часов, основное время уходит на этапы 2 и 3.
 
-### 7.5 Запуск на Kaggle (опционально)
-
-Скрипт `kaggle/push.sh` собирает этап в один файл и отправляет его как приватный ноутбук с GPU:
-
-1. Создайте API-токен в настройках Kaggle (Settings → API) и сохраните его в `~/.kaggle/access_token`.
-2. Загрузите датасет:
-   - положите `data_original.zip` в `kaggle/data/`;
-   - замените `killvarus` в `kaggle/data/dataset-metadata.json` на своё имя пользователя;
-   - выполните `kaggle datasets create -p kaggle/data`.
-3. Запустите этапы по очереди: `bash kaggle/push.sh <имя_пользователя> 1`, затем `2` и `3`, дожидаясь завершения предыдущего (`kaggle kernels status <имя_пользователя>/kion-rl-stage1`).
-4. Скачайте результаты: `kaggle kernels output <имя_пользователя>/kion-rl-stage1 -p results/stage1`, аналогично для этапов 2 и 3.
-
-### 7.6 Структура репозитория
+### 7.5 Структура репозитория
 
 | путь | содержимое |
 |---|---|
 | `src/pipeline.py` | весь пайплайн: данные, модели, RL, оценка |
 | `src/make_report.py` | таблицы и графики |
-| `kaggle/` | запуск на Kaggle |
 | `results/stage{1,2,3}/` | метрики и логи; веса моделей этапа 1 |
 | `results/tables.md` | полные таблицы всех конфигураций |
 | `results/figures/` | графики |

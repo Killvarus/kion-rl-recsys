@@ -1,4 +1,4 @@
-"""Build tables and figures from Kaggle outputs: results/stage1/results_stage1.json, results/stage2/results_stage2.json."""
+"""Build tables and figures from stage outputs: results/stage{1,2,3}/results_stage*.json."""
 import json, os, sys
 import pandas as pd, matplotlib
 matplotlib.use('Agg')

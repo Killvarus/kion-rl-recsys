@@ -81,5 +81,27 @@ if s2:
     axes[0].set_title('sampled slate reward (z)'); axes[1].set_title('KL to SFT'); axes[0].legend(fontsize=7)
     plt.tight_layout(); plt.savefig(f'{FIG}/rl_curves.png', dpi=120); plt.close()
 
+s4p = f'{R}/stage4/results_stage4.json'
+if os.path.exists(s4p):  # stage 4: relative rewards, negative sampling, trajectory RL, logged-feedback training
+    s4 = json.load(open(s4p))
+    cols4 = COLS + ['RM_wp_rel', 'RM_time_rel', 'judge_wp_rel', 'RMvariant_uncond']
+    t4 = pd.DataFrame(s4['test']).T
+    out.append('## Stage 4 (test week)\n\n' + t4[[c for c in cols4 if c in t4.columns]].round(4).to_markdown())
+    out.append('Unconditional head vs negative sampling:\n\n' + pd.DataFrame(s4['rm_variants']).T.round(4).to_markdown())
+    ms4 = s4['multistep']
+    fig, axes = plt.subplots(1, 3, figsize=(17, 4))
+    for nm, d in ms4.items():
+        rk = [k for k in d if k.endswith('_synthetic_ctx')][0]; rn = rk[3:-len('_synthetic_ctx')]
+        ax = axes[0] if rn == 'wp' else axes[1]
+        st = range(1, len(d[rk]) + 1)
+        l, = ax.plot(st, d[rk], 'o-', label=f'{nm}: synthetic ctx')
+        ax.plot(st, d[f'RM_{rn}_real_ctx'], 'x--', color=l.get_color(), label=f'{nm}: real ctx')
+        axes[2].plot(st, d['hit_autoregressive_step'], 'o-', label=nm)
+    axes[0].set_title('RM wp of k-th generated item'); axes[1].set_title('RM time of k-th generated item')
+    axes[2].set_title('hit rate of k-th generated item')
+    for a in axes: a.set_xlabel('step k'); a.legend(fontsize=7); a.grid(alpha=.3)
+    plt.tight_layout(); plt.savefig(f'{FIG}/multistep_traj.png', dpi=120); plt.close()
+    out.append('## Stage 4 multi-step\n\n' + pd.DataFrame(ms4).T.to_markdown())
+
 open(f'{R}/tables.md', 'w', encoding='utf-8').write('\n\n'.join(out))
 print('\n\n'.join(out))
